@@ -32,7 +32,7 @@
         <div class = "row" style = "width:100%;">  
             <div class = "col s12 m12 l12">  
                 <nav>  
-                    <div class="nav-wrapper light-green">  
+                    <div class="nav-wrapper purple darken-4">  
                             <ul id="nav-mobile" class="left">  
                                 <li><a href="/piezas">Ver Piezas</a></li>    
                             </ul>  

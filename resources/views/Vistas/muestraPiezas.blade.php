@@ -10,7 +10,7 @@
     @if(!is_null($datos))
         @foreach ($datos as $d)  
             <div class = "row">  
-                <div class = "col s10 m10 l10 light-green darken-3 white-text">  
+                <div class = "col s10 m10 l10 pink darken-1 white-text">  
                     <p>{{$d->nombre}}</p>
                     <p>[{{$d->no_piezas}} | ${{$d->costo_pieza}}]</p>
                     <p>{{$d->descripcion}}</p>

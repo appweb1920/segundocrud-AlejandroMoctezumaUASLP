@@ -35,7 +35,7 @@
             </div>  
 
             <div class="row">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light amber" type="submit" name="action">Submit
                     <i class="material-icons right">cloud</i>
                 </button>
             </div>
