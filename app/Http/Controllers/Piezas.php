@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\pieza;
 
 class Piezas extends Controller
 {
@@ -13,7 +14,8 @@ class Piezas extends Controller
      */
     public function index()
     {
-        //
+        $d = piezas::all();
+        return view('Vistas.muestraPiezas')->with('datos',$d);
     }
 
     /**
@@ -23,7 +25,7 @@ class Piezas extends Controller
      */
     public function create()
     {
-        //
+        return view('Vistas.creaPieza');
     }
 
     /**
@@ -34,7 +36,13 @@ class Piezas extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dato = new pieza;
+        $dato->nombre = $request->nombre;
+        $dato->descripcion = $request->descripcion;
+        $dato->no_piezas = $request->no_piezas;
+        $dato->costo_pieza = $request->costo_pieza;
+        $dato->save();
+        return redirect('/piezas');
     }
 
     /**
@@ -45,7 +53,7 @@ class Piezas extends Controller
      */
     public function show($id)
     {
-        //
+        // SIN UTILIZAR
     }
 
     /**
@@ -56,7 +64,8 @@ class Piezas extends Controller
      */
     public function edit($id)
     {
-        //
+        $dato = piezas::find($id);
+        return view('Vistas.editaPieza')->with('dato',$dato);
     }
 
     /**
@@ -68,7 +77,16 @@ class Piezas extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dato = piezas::find($id);
+        if(!is_null($dato))
+        {
+            $dato->nombre = $request->nombre;
+            $dato->descripcion = $request->descripcion;
+            $dato->no_piezas = $request->no_piezas;
+            $dato->costo_pieza = $request->costo_pieza;
+            $dato->save();
+        }
+        return redirect('/piezas');
     }
 
     /**
@@ -79,6 +97,8 @@ class Piezas extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dato = piezas::find($id);
+        $dato->delete();
+        return redirect('/piezas');
     }
 }

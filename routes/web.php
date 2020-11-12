@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('piezas', Piezas::class)->only([
+    'index', 'create', 'store', 'edit', 'update', 'destro'
+]);;
+
+Route::get('/', 'Piezas@index');
+Route::get('/piezas','Piezas@index');
+Route::get('/piezas/create','Piezas@create');
+Route::post('/piezas','Piezas@store');
+Route::get('/piezas/{id}/edit','Piezas@edit');
+Route::put('/piezas/{id}','Piezas@update');
+Route::delete('/piezas/{id}','Piezas@destroy');
