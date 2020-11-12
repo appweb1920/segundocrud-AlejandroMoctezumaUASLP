@@ -34,7 +34,7 @@
                 <nav>  
                     <div class="nav-wrapper light-green">  
                             <ul id="nav-mobile" class="left">  
-                                <li><a href="/piezas">Parcial 02</a></li>    
+                                <li><a href="/piezas">Ver Piezas</a></li>    
                             </ul>  
                     </div>  
                 </nav>  

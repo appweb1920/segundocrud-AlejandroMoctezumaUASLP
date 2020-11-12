@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Models\pieza;
 
@@ -14,7 +15,7 @@ class Piezas extends Controller
      */
     public function index()
     {
-        $d = piezas::all();
+        $d = pieza::all();
         return view('Vistas.muestraPiezas')->with('datos',$d);
     }
 
@@ -64,7 +65,7 @@ class Piezas extends Controller
      */
     public function edit($id)
     {
-        $dato = piezas::find($id);
+        $dato = pieza::find($id);
         return view('Vistas.editaPieza')->with('dato',$dato);
     }
 
@@ -77,7 +78,7 @@ class Piezas extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dato = piezas::find($id);
+        $dato = pieza::find($id);
         if(!is_null($dato))
         {
             $dato->nombre = $request->nombre;
@@ -97,7 +98,7 @@ class Piezas extends Controller
      */
     public function destroy($id)
     {
-        $dato = piezas::find($id);
+        $dato = pieza::find($id);
         $dato->delete();
         return redirect('/piezas');
     }

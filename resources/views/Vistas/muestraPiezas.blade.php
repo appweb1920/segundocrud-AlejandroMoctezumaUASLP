@@ -4,7 +4,7 @@
     <h2>Muestra Piezas</h2>
 
     <button class = "btn waves-effect waves-teal amber z-depth-1">  
-        <a href="/creaRecolector">Nuevo Recolector</a>
+        <a href="/piezas/create">Nueva Pieza</a>
     </button></td>
 
     @if(!is_null($datos))
@@ -14,15 +14,14 @@
                     <p>{{$d->nombre}}</p>
                     <p>[{{$d->no_piezas}} | ${{$d->costo_pieza}}]</p>
                     <p>{{$d->descripcion}}</p>
-                    <br>
-                    <button class = "btn waves-effect waves-teal amber z-depth-1">  
-                        <a href="/piezas/{{$d->id}}">Edita</a>
-                    </button></td>  
-                    <form action="piezas/{{$dato->id}}" method="POST" class = "col s12"> 
+                    <form action="piezas/{{$d->id}}" method="POST" class = "col s12"> 
                     @csrf
                         <input type="hidden" name="_method" value="delete">
+                        <button class = "btn waves-effect waves-teal amber z-depth-1">  
+                            <a href="/piezas/{{$d->id}}/edit">Edita</a>
+                        </button></td>  
                         <button class = "btn waves-effect waves-teal amber z-depth-1" type="submit" name="action">
-                            Submit
+                            Borrar
                         </button></td>  
                     </form>
                 </div>  

@@ -4,7 +4,7 @@
     <h2>Edita Pieza</h2>
 
     <div class = "row"> 
-        <form action="piezas/{{$dato->id}}" method="POST" class = "col s12"> 
+        <form action="/piezas/{{$dato->id}}" method="POST" class = "col s12"> 
         @csrf
             <input type="hidden" name="_method" value="put">
 

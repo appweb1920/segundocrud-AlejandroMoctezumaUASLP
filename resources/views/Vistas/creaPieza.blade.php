@@ -4,7 +4,7 @@
     <h2>Crear Pieza</h2>
 
     <div class = "row"> 
-        <form action="piezas" method="POST" class = "col s12"> 
+        <form action="/piezas" method="POST" class = "col s12"> 
         @csrf
             <div class = "row">  
                 <div class = "input-field col s6">  
